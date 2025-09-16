@@ -1,3 +1,13 @@
+## 🔗 Access our project site
+
+[![elixirofexistence.art](https://img.shields.io/badge/Visit-Website-blue)](https://elixirofexistence.art)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SeuUsuario/SeuRepositorio/main/elixirofexistence_qrcode.png" alt="QR Code" width="200"/>
+</p>
+
+
+
 -- Inserir um autor
 INSERT INTO authors (name, country, birth_date)
 VALUES ('Seth Agnar Kristensen', 'Brazil/Canada', '1974-09-16');
