@@ -1,90 +1,79 @@
+<h1 align="center">☀️ ELIXIR OF EXISTENCE</h1>
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/SeuUsuario/elixirofexistence/main/elixirofexistence_qrcode.png" alt="QR Code for elixirofexistence.art" width="220"/>
+  <em>Knowledge, creativity and code shaping the path of transformation.</em>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SeuUsuario/elixirofexistence/main/elixirofexistence_qrcode.png" alt="QR Code for elixirofexistence.art" width="200"/>
+</p>
 
--- Inserir um autor
-INSERT INTO authors (name, country, birth_date)
-VALUES ('Seth Agnar Kristensen', 'Brazil/Canada', '1974-09-16');
-
--- Inserir um livro
-INSERT INTO books (title, publication_year, language, author_id)
-VALUES ('Supreme Being – Book 1: Genesis', 2025, 'EN-CA', 1);
-
--- Traduções
-INSERT INTO translations (book_id, language, translator_name)
-VALUES (1, 'FR-CA', 'Seth A. Kristensen');
-
--- Ilustração
-INSERT INTO illustrations (book_id, illustrator_name, technique, signed)
-VALUES (1, 'MSP', 'Graphite Pencil – Realism', TRUE);
-
--- Leitor e leitura
-INSERT INTO readers (name, email, country)
-VALUES ('Lyra Elin Kristensen', 'lyra@supremebeing.art', 'Canada');
-
-INSERT INTO reading_history (reader_id, book_id)
-VALUES (1, 1);
-
-# Elixir of Existence · Élixir de l'Existence
-
-**A poetic, ethical and technical project**  
-**Un projet poétique, éthique et technique**
+<p align="center">
+  <a href="https://elixirofexistence.art">
+    <img src="https://img.shields.io/badge/Visit-Site-blue?style=flat&logo=google-chrome" alt="Visit elixirofexistence.art">
+  </a>
+</p>
 
 ---
 
-## 🌱 About this Repository · À propos de ce répertoire
+## 🧠 Description / Description
 
-This repository contains clean, efficient and elegant code examples in **Java**, **C++**, **C# (.NET)**, **Python**, **PostgreSQL**, and **SQL**, developed by **Marcelo SP**, a multidisciplinary creator preparing for a new life in Canada. These projects are part of a professional portfolio focused on practical skills and artistic expression in code.
+🇨🇦 **EN-CA**
 
-Ce dépôt contient des exemples de code propres, efficaces et élégants en **Java**, **C++**, **C# (.NET)**, **Python**, **PostgreSQL** et **SQL**, développés par **Marcelo SP**, un créateur multidisciplinaire qui se prépare à une nouvelle vie au Canada. Ces projets font partie d’un portfolio professionnel axé sur les compétences pratiques et l’expression artistique dans le code.
+This repository presents public samples of code from the developer [Marcelo SP](https://www.linkedin.com/in/marcelosp) — also known as "MSP" — focused on databases and backend logic in:
 
----
+- PostgreSQL
+- Java (OOP and clean syntax)
+- Python (data structure practice)
+- C++ and C# (.NET basics)
 
-## 🧪 Technologies Used · Technologies utilisées
+These examples are detached from any proprietary system, and were written solely for learning, creativity, and employability purposes. We are also hosting the complete documentation and project vision at:  
+👉 **[elixirofexistence.art](https://elixirofexistence.art)**
 
-- Java (Spring Boot – soon)
-- Python (data and structure examples)
-- C++ (algorithms and system logic)
-- C# with .NET Core
-- PostgreSQL (commands and schemas)
-- SQL (relational models and queries)
+🇫🇷 **FR-CA**
 
----
+Ce dépôt présente des extraits de code publics créés par le développeur [Marcelo SP](https://www.linkedin.com/in/marcelosp) — connu également sous le nom "MSP" — dans le but d'étudier les bases de données et la logique backend à travers :
 
-## 🎯 Purpose · Objectif
+- PostgreSQL
+- Java (POO et syntaxe claire)
+- Python (structures de données)
+- C++ et C# (fondamentaux de .NET)
 
-To demonstrate mastery of programming languages and database logic in a poetic, ethical and responsible way. These codes are not just lines — they are bridges between logic and soul, between syntax and meaning.
-
-Démontrer la maîtrise des langages de programmation et de la logique des bases de données d’une manière poétique, éthique et responsable. Ces codes ne sont pas de simples lignes — ce sont des ponts entre la logique et l’âme, entre la syntaxe et le sens.
-
----
-
-## ✨ Future Steps · Prochaines étapes
-
-- Integration with web frameworks (Spring, Flask, ASP.NET)
-- Secure backend logic for games, books and creative projects
-- Artistic portfolio site (under construction: `www.elixirofexistence.art`)
-- Advanced C++/C# for MOBA & Game Engines
-- Full translation of all documentation into **Canadian French**
+Tous les codes sont indépendants des systèmes propriétaires et ont été écrits dans une perspective d’apprentissage, de créativité et d’employabilité. La documentation complète est disponible sur le site :  
+👉 **[elixirofexistence.art](https://elixirofexistence.art)**
 
 ---
 
-## 🔐 License · Licence
+## 🛠️ Languages & Tools
 
-All content in this repository is protected under registration at the **National Library of Brazil (BN)** and will soon be registered internationally via **WIPO** and **CIPO**.
-
-Tout le contenu de ce dépôt est protégé par un enregistrement à la **Bibliothèque nationale du Brésil (BN)** et sera prochainement enregistré au niveau international via **l’OMPI** et **l’OPIC**.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=java&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
+![C Sharp](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
 
 ---
 
-## ☀️ Final Message · Message final
+## 📍 Roadmap
 
-This repository is part of a much greater dream — to create, to learn, to inspire, and to bring beauty to the world through knowledge and love.
+- [x] Create PostgreSQL sample tables
+- [x] Write basic SQL queries
+- [x] Integrate Java with PostgreSQL
+- [x] Upload source code to GitHub
+- [x] Add README bilingual documentation
+- [ ] Deploy elixirofexistence.art (coming soon!)
+- [ ] Add .NET/C# database integration
+- [ ] Create RESTful API sample
+- [ ] Write project documentation in Markdown
 
-Ce dépôt fait partie d’un rêve beaucoup plus vaste — créer, apprendre, inspirer et apporter de la beauté au monde par la connaissance et l’amour.
+---
 
-> Made with vision, strength and reverence.  
-> Fait avec vision, force et révérence.  
->  
-> ✍🏻 Marcelo SP | GitHub: [ValhallaRising1974](https://github.com/ValhallaRising1974)
+## 🔗 Contact
+
+📫 GitHub: [@ValhallaRising1974](https://github.com/ValhallaRising1974)  
+🌐 Website: [elixirofexistence.art](https://elixirofexistence.art)  
+👨‍💻 LinkedIn: [Marcelo SP](https://www.linkedin.com/in/marcelosp)
+
+---
+
+> 🧬 *"Life is not defined by what we accumulate, but by what we create, share, and inspire."* — MSP  
