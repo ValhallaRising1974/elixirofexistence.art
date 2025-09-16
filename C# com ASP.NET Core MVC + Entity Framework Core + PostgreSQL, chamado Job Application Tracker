@@ -1,0 +1,135 @@
+// Projeto: Job Application Tracker - MSP & LYRA
+// Linguagem: C# com ASP.NET Core MVC + Entity Framework Core
+// Banco: PostgreSQL
+// Objetivo: Ajudar usuários a acompanhar suas candidaturas profissionais
+
+// 1. MODELO: JobApplication.cs
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace ElixirOfExistence.Models
+{
+    public class JobApplication
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string Company { get; set; }
+
+        [Required]
+        public string Position { get; set; }
+
+        public string Location { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime ApplicationDate { get; set; }
+
+        public string Status { get; set; } // Applied, Interview, Offered, Rejected
+
+        public string Notes { get; set; }
+
+        public string Link { get; set; }
+    }
+}
+
+// 2. CONTEXTO DO BANCO: ApplicationDbContext.cs
+using Microsoft.EntityFrameworkCore;
+
+namespace ElixirOfExistence.Data
+{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options) { }
+
+        public DbSet<ElixirOfExistence.Models.JobApplication> JobApplications { get; set; }
+    }
+}
+
+// 3. CONTROLADOR: JobApplicationsController.cs
+using Microsoft.AspNetCore.Mvc;
+using ElixirOfExistence.Models;
+using ElixirOfExistence.Data;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ElixirOfExistence.Controllers
+{
+    public class JobApplicationsController : Controller
+    {
+        private readonly ApplicationDbContext _context;
+
+        public JobApplicationsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult Index()
+        {
+            var applications = _context.JobApplications.ToList();
+            return View(applications);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(JobApplication application)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(application);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(application);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var app = _context.JobApplications.FirstOrDefault(a => a.Id == id);
+            return View(app);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var app = _context.JobApplications.FirstOrDefault(a => a.Id == id);
+            return View(app);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, JobApplication application)
+        {
+            if (id != application.Id) return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(application);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(application);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var app = _context.JobApplications.FirstOrDefault(a => a.Id == id);
+            return View(app);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var app = _context.JobApplications.FirstOrDefault(a => a.Id == id);
+            _context.JobApplications.Remove(app);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+    }
+}
