@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+public class NoteManager {
+    private List<Note> notes = new ArrayList<>();
+    private final String FILE_NAME = "notes.txt";
+
+    public void loadNotes() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                notes.add(new Note(line));
+            }
+        } catch (IOException e) {
+            System.out.println("No existing notes found.");
+        }
+    }
+
+    public void saveNotes() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            for (Note note : notes) {
+                writer.write(note.getContent());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Failed to save notes.");
+        }
+    }
+
+    public void addNote(String content) {
+        notes.add(new Note(content));
+    }
+
+    public void listNotes() {
+        if (notes.isEmpty()) {
+            System.out.println("No notes yet.");
+        } else {
+            for (int i = 0; i < notes.size(); i++) {
+                System.out.println((i + 1) + ". " + notes.get(i).getContent());
+            }
+        }
+    }
+
+    public void deleteNote(int index) {
+        if (index >= 0 && index < notes.size()) {
+            notes.remove(index);
+            System.out.println("Note deleted.");
+        } else {
+            System.out.println("Invalid note number.");
+        }
+    }
+}
