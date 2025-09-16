@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        NoteManager manager = new NoteManager();
+        Scanner scanner = new Scanner(System.in);
+        manager.loadNotes();
+
+        while (true) {
+            System.out.println("\n===== PERSONAL NOTES =====");
+            System.out.println("1. Add Note");
+            System.out.println("2. List Notes");
+            System.out.println("3. Delete Note");
+            System.out.println("4. Exit");
+            System.out.print("Choose: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    System.out.print("Enter note: ");
+                    String content = scanner.nextLine();
+                    manager.addNote(content);
+                    break;
+                case "2":
+                    manager.listNotes();
+                    break;
+                case "3":
+                    System.out.print("Enter note number to delete: ");
+                    int number = Integer.parseInt(scanner.nextLine());
+                    manager.deleteNote(number - 1);
+                    break;
+                case "4":
+                    manager.saveNotes();
+                    System.out.println("Bye!");
+                    return;
+                default:
+                    System.out.println("Invalid option.");
+            }
+        }
+    }
+}
