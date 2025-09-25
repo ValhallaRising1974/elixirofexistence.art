@@ -1,0 +1,9 @@
+gcc -O0 -g -o build/sum src/sum.c
+objdump -d -M intel build/sum > build/sum.disasm
+gcc -O2 -g -o build/sum_O2 src/sum.c
+objdump -d -M intel build/sum_O2 > build/sum_O2.disasm
+
+## Observations (x86_64 SysV calling convention)
+- sum(7,5) -> 7 in edi, 5 in esi before call
+- return value in eax
+- with -O2 sum may be inlined, removing call overhead
