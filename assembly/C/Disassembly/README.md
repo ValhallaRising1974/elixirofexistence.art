@@ -1,0 +1,26 @@
+# Disassembly Showcase
+
+This repository demonstrates the compilation → assembly → disassembly workflow for small C programs.
+It is intended as an educational portfolio piece for low-level programming, reverse engineering, and systems understanding.
+
+## Contents
+- `src/`: original C sources
+- `build/`: compiled binaries and disassembly outputs
+- `analysis/`: textual analysis and notes (line-by-line explanations)
+- `README_FR-CA.md`: French (Canadian) translation
+
+## How to reproduce locally
+1. `gcc -O0 -g -o build/sum src/sum.c`
+2. `objdump -d -M intel build/sum > build/sum.disasm`
+
+## Why this matters
+Employers value developers who know how code becomes machine instructions. This repo shows ability in C, compilation flags, and binary analysis.
+
+# Vitrine Désassemblage
+
+Ce dépôt montre le flux compilation → assembleur → désassemblage pour de petits programmes C.
+Il sert de pièce de portfolio éducative pour la programmation bas-niveau et l'ingénierie inverse.
+
+## Reproduire localement
+1. `gcc -O0 -g -o build/sum src/sum.c`
+2. `objdump -d -M intel build/sum > build/sum.disasm`
