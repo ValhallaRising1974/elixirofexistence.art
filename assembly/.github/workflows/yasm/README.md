@@ -13,3 +13,6 @@ jobs:
         run: gcc -O0 -g -o build/sum src/sum.c
       - name: Run
         run: ./build/sum
+
+        name: C Build
+
